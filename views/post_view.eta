@@ -1,0 +1,22 @@
+<% layout('./layout') %>
+
+  <section id="post-section" class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-4">
+            <%= it.post.title %>
+          </h1>
+          <ul>
+            <li>
+              <%= it.post.body %>
+                <p>
+                  Posted in
+                  <%= it.post.name %>
+                </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
