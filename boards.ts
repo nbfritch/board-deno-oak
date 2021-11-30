@@ -39,6 +39,7 @@ boardRouter.get("/:url", async (context: Context) => {
 
   const db = getDb();
 
+  // This might be vulnerable to sql injection, need to look at this library closer
   const boardPosts = await db.queryObject<BoardPost>`
     Select
       p.id,
@@ -53,11 +54,6 @@ boardRouter.get("/:url", async (context: Context) => {
     Order By p.id Desc
     Limit 25;
   `;
-
-  console.log(url);
-  boardPosts.rows?.forEach((p) => {
-    console.log(p);
-  });
 
   if (boardPosts.rows.length) {
     renderView(context, "board_view.eta", {

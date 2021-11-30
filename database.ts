@@ -19,43 +19,7 @@ async function getDbClient() {
   return db;
 }
 
-async function dropAndCreateBoardsTable(db: Client) {
-  await db.queryObject`
-        Drop Table If Exists Boards;
-    `;
-
-  await db.queryObject`
-        Create Table Boards (
-            Id Int Primary Key,
-            Name Varchar(30) Not Null Unique,
-            Url Varchar(20) Null
-        );
-    `;
-}
-
-async function dropAndCreatePostsTable(db: Client) {
-  await db.queryObject`
-        Drop Table If Exists Posts;
-    `;
-
-  await db.queryObject`
-        Create Table Posts (
-            Id Int Primary Key,
-            Title Varchar(144) Not Null,
-            BoardId Int Not Null,
-            Foreign Key(BoardId) References Boards(Id)
-        );
-    `;
-}
-
-async function getEmptyDb(): Promise<Client> {
-  const db = await getDbClient();
-  // await dropAndCreateBoardsTable(db);
-  // await dropAndCreatePostsTable(db);
-  return db;
-}
-
-const database = await getEmptyDb();
+const database = await getDbClient();
 export function getDb(): Client {
   return database;
 }
