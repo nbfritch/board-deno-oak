@@ -1,0 +1,42 @@
+<% layout('./layout') %>
+
+    <section id="board-actions-secion" class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div id="most-popular-boards-column" class="column has-text-centered">
+                    <h1 class="title is-4">Most Popular</h1>
+                    <ul>
+                        <% it.boards.forEach(function (board) { %>
+                            <li><a href="/boards/<%= board.url %>">
+                                    <%= board.name %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+                </div>
+                <div id="newest-boards-column" class="column has-text-centered">
+                    <h1 class="title is-4">Newest</h1>
+                    <ul>
+                        <% it.boards.forEach(function (board) { %>
+                            <li><a href="/boards/<%= board.url %>">
+                                    <%= board.name %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+                </div>
+                <div id="newest-boards-column" class="column has-text-centered">
+                    <h1 class="title is-4">Request</h1>
+                    <ul>
+                        <li>
+                            <a href="/">New board</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+    </div>

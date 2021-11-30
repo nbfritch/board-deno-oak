@@ -1,0 +1,8 @@
+{
+  "name": "denox",
+  "description": "A micro link aggregator written with Deno",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "deno run -c ./deno.jsonc -A main.ts"
+  }
+}

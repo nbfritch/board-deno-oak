@@ -1,0 +1,31 @@
+<% layout('./layout') %>
+
+<section id="thanks-section" class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h1 class="title is-4">Made With</h1>
+                <ul>
+                    <li><a class="has-text-link-dark" href="https://deno.land/">Deno</a></li>
+                    <li><a class="has-text-success-dark" href="https://deno.land/x/oak/">Oak</a></li>
+                    <li><a class="has-text-warning-dark" href="https://deno.land/x/eta">Eta</a></li>
+                    <li><a class="has-text-danger-dark" href="https://bulma.io/">Bluma</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="made-by-secion" class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h1 class="title is-4">Made By</h3>
+                <h2 class="subtitle">Nathan Fritch</h3>
+                <ul>
+                    <li><a class="has-text-primary-dark" href="https://github.com/nbfritch/">github</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

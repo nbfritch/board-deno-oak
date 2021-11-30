@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= it.title %>
+    </title>
+    <link type="text/css" href="/static/base.css" rel=stylesheet>
+    <link type="text/css" href="/static/site.css" rel=stylesheet>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item is-size-4" href="/">
+                <b>DenoX</b>
+            </a>
+            <a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false"
+                data-target="main-navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="main-navbar">
+            <div class="navbar-start">
+                <a class="navbar-item <%= it.boards ? 'has-text-weight-bold' : '' %>" href="/boards">Boards</a>
+                <a class="navbar-item <%= it.posts ? 'has-text-weight-bold' : '' %>" href="/posts">Posts</a>
+                <a class="navbar-item <%= it.about ? 'has-text-weight-bold' : '' %>" href="/about">About</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="/signup" class="is-4">Sign Up </a>
+                        <p>/</p>
+                        <a href="/login" class="is-4"> Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main id="app">
+        <%~ it.body %>
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            2021 Nathan Fritch
+            <br />
+            Yes this stock bulma, I know
+        </div>
+    </footer>
+</body>
+
+</html>

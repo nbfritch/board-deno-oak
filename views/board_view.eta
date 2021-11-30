@@ -1,0 +1,9 @@
+<% layout('./layout') %>
+
+<div class="content">
+    <ul>
+        <% it.boardPosts && it.boardPosts.forEach(function (boardPost) { %>
+        <li><a href="/posts/<%= boardPost.id %>"><%= boardPost.title %></a> :: <%= boardPost.name %></li>
+        <% }) %>
+    </ul>
+</div>
