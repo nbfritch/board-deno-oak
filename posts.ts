@@ -6,11 +6,11 @@ import { getDb } from "./database.ts";
 const postRouter = new Router();
 
 interface Post {
-  id: number,
-  title: string,
-  body: string,
-  boardid: number,
-  name: string
+  id: number;
+  title: string;
+  body: string;
+  boardid: number;
+  name: string;
 }
 
 postRouter.get("/", async (context: Context) => {
@@ -32,13 +32,14 @@ postRouter.get("/", async (context: Context) => {
 
   renderView(context, "post_index.eta", {
     title: "Latest",
-    posts: posts.rows
+    posts: posts.rows,
   });
 });
 
 postRouter.get("/new", (context: Context) => {
-  // TODO
-  context.response.body = "new post";
+  renderView(context, "post_form.eta", {
+    title: "New Post",
+  });
 });
 
 postRouter.post("/new", (context: Context) => {
@@ -47,12 +48,12 @@ postRouter.post("/new", (context: Context) => {
 });
 
 postRouter.get("/:postid", async (context: Context) => {
-  const { postid } = helpers.getQuery(context, {mergeParams: true});
+  const { postid } = helpers.getQuery(context, { mergeParams: true });
 
   if (!postid) {
     renderView(context, "not_found.eta", {
-      title: "Post not found"
-    })
+      title: "Post not found",
+    });
   }
 
   const db = getDb();
@@ -75,11 +76,11 @@ postRouter.get("/:postid", async (context: Context) => {
     const p = post.rows[0];
     renderView(context, "post_view.eta", {
       title: p.title,
-      post: p
+      post: p,
     });
   } else {
     renderView(context, "not_found.eta", {
-      title: "Post not found"
+      title: "Post not found",
     });
   }
 });
